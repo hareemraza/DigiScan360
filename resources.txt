@@ -1,0 +1,4 @@
+product_links.txt
+products.json
+reviews.json
+amazon.log

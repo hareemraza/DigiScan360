@@ -179,7 +179,10 @@ def gather_all_product_links(query, num_visited_pages=5):
         # random chance to simulate user pause
         if random.random() < 0.3:
             time.sleep(random.randint(10, 30))
-    return list(all_product_links)
+    all_product_links = list(all_product_links)
+    with open("product_links.txt", "w", encoding="utf-8") as f:
+        f.writelines([link + "\n" for link in all_product_links])
+    return all_product_links
 
 
 def scrape_product_page(soup):
