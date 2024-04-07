@@ -50,5 +50,5 @@ mediamarkt.log
 Finally, to upload the files to Azure, run:
 
 ```
-python -m data_collection.azcs_uploader.py
+python -m data_collection.azcs_uploader
 ```
