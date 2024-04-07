@@ -1,6 +1,0 @@
-product_links.txt
-amazon_products.json
-amazon_reviews.json
-amazon.log
-mediamarkt_products.json
-mediamarkt.log
