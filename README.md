@@ -52,3 +52,5 @@ Finally, to upload the files to Azure, run:
 ```
 python -m data_collection.azcs_uploader
 ```
+
+**The remaining parts of this project are done on Microsoft Fabric**. To gain access to our lakehouse, send an email at qasimkhan3.124@gmail.com
