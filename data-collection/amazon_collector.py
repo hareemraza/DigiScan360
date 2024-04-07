@@ -410,6 +410,17 @@ def scrape_reviews(products):
     return reviews
 
 
+def crawl_and_scrape_amazon(query):
+    all_product_links = gather_all_product_links(query)
+    logging.info(f"Total links gathered: {len(all_product_links)}")
+    products = scrape_products(all_product_links)
+    logging.info(f"Total products scraped: {len(products)}")
+    reviews = scrape_reviews(products)
+    logging.info(f"Total reviews scraped: {len(reviews)}")
+
+    return all_product_links, products, reviews
+
+
 if __name__ == "__main__":
     # parse search query from command line argument
     parser = ArgumentParser(description="Amazon Web Scraper")
@@ -418,10 +429,5 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
 
-    all_product_links = gather_all_product_links(args.query)
-    logging.info(f"Total links gathered: {len(all_product_links)}")
-    products = scrape_products(all_product_links)
-    logging.info(f"Total products scraped: {len(products)}")
-    reviews = scrape_reviews(products)
-    logging.info(f"Total reviews scraped: {len(reviews)}")
+    crawl_and_scrape_amazon(args.query)
     global_session.close()
