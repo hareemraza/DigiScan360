@@ -170,6 +170,7 @@ def fetch_product_links(base_link, end_page):
     return links
 
 if __name__ == "__main__":
+    # List of relevant pages to be scraped
     urls_and_pages = [
         ("https://www.mediamarkt.es/es/search.html?query=wireless%20headphones", 4),
         ("https://www.mediamarkt.es/es/brand/jbl/auriculares", 8),
@@ -212,10 +213,11 @@ if __name__ == "__main__":
         else:
             print(f"Failed to get the page for link: {link}, status code: {response.status_code}")
             logging.error(f"Failed to get the page for link: {link}, status code: {response.status_code}")
-
     print("Scraping completed. Writing data to file.")
     logging.info("Scraping completed. Writing data to file.")
+
     with open("mediamarkt_products.json", "w", encoding='utf-8') as f:
         json.dump(information, f, ensure_ascii=False, indent=4)
+        
     print("Data written to mediamarkt_products.json successfully.")
     logging.info("Data written to mediamarkt_products.json successfully.")
