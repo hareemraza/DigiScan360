@@ -180,7 +180,7 @@ def gather_all_product_links(query, num_visited_pages=5):
         if random.random() < 0.3:
             time.sleep(random.randint(10, 30))
     all_product_links = list(all_product_links)
-    with open("product_links.txt", "w", encoding="utf-8") as f:
+    with open("amazon_product_links.txt", "w", encoding="utf-8") as f:
         f.writelines([link + "\n" for link in all_product_links])
     return all_product_links
 
@@ -267,7 +267,7 @@ def scrape_products(product_links):
         requests.Session(),
         requests.Session(),
     ]
-    products = read_json_file("products.json")
+    products = read_json_file("amazon_products.json")
     i = len(products)
     n = 0
     for url in tqdm(product_links[i:]):
@@ -289,7 +289,7 @@ def scrape_products(product_links):
                 soup = BeautifulSoup(response.text)
                 product_info = scrape_product_page(soup)
                 products.append(product_info)
-                write_json_file("products.json", products)
+                write_json_file("amazon_products.json", products)
                 break
             except:
                 # retry
@@ -355,7 +355,7 @@ def scrape_reviews(products):
         requests.Session(),
     ]
 
-    reviews = read_json_file("reviews.json")
+    reviews = read_json_file("amazon_reviews.json")
     i = len(reviews)
     n = 0
 
@@ -396,7 +396,7 @@ def scrape_reviews(products):
                         review_info = extract_review_information(review_tag)
                         review_list["reviews"].append(review_info)
                     reviews.append(review_list)
-                    write_json_file("reviews.json", reviews)
+                    write_json_file("amazon_reviews.json", reviews)
                 break
             except:
                 # retry
