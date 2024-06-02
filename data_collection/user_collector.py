@@ -10,7 +10,7 @@ companies_info = {
     "Beats": {"famous": True},
     "ToZo": {"famous": False},
     "Philips": {"famous": True},
-    "AKG": {"famous": True},
+    "AKG": {"famous": False},
     "Logitech": {"famous": True},
     "Xiaomi": {"famous": True},
     "OneOdio": {"famous": False},

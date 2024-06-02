@@ -32,9 +32,10 @@ def add_noise(tweet):
         ])
         return tweet + noise
     return tweet
+
 def generate_tweet(brand):
     messages = [
-                f"Amo mis nuevos auriculares {brand}. ¡La calidad del sonido es increíble! #audio #music {random.choice(hashtags)}",
+        f"Amo mis nuevos auriculares {brand}. ¡La calidad del sonido es increíble! #audio #music {random.choice(hashtags)}",
         f"Just got my {brand} headphones. The noise cancellation is top-notch! #tech #soundquality {random.choice(hashtags)}",
         f"Los auriculares {brand} son incómodos después de unas horas. #audio #review {random.choice(hashtags)}",
         f"Not happy with the battery life of my {brand} headphones. Expected better. #tech {random.choice(hashtags)}",
@@ -126,6 +127,7 @@ for _ in range(10000):
         "screen_name": fake.unique.user_name(),
         "timestamp": fake.date_time_between(start_date="-2y", end_date="now").strftime('%Y-%m-%dT%H:%M:%SZ'),
         "text": tweet_text,
+        "brand_name": brand, 
         "in_reply_to_user_id": in_reply_to_user_id,
         "lang": language,
         "impression_count": random.randint(100, 10000),
@@ -136,7 +138,7 @@ for _ in range(10000):
         "hashtags": [tag for tag in tweet_text.split() if tag.startswith("#")],
         "user_followers_count": random.randint(2000, 10000) if random.random() < 0.1 else random.randint(10, 1200),
         "user_following_count": random.randint(10, 100) if random.random() < 0.1 else random.randint(50, 1000),
-        "verified": True if random.random() < 0.1 else False
+        "verified": True if random.random() < 0.3 else False
     })
 
 csv_file = "consumer_tweets.csv"
