@@ -1,0 +1,44 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/digiscan360/Product> a rdfs:Class .
+
+<http://example.org/digiscan360/Review> a rdfs:Class .
+
+<http://example.org/digiscan360/body> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Review> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/date> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Review> ;
+    rdfs:range xsd:date .
+
+<http://example.org/digiscan360/num_helpful> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Review> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/product_id> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Review> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/review_id> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Review> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/reviews> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Review> ;
+    rdfs:range <http://example.org/digiscan360/Product> .
+
+<http://example.org/digiscan360/sentiment> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Review> ;
+    rdfs:range xsd:boolean .
+
+<http://example.org/digiscan360/summaries> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Review> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/title> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Review> ;
+    rdfs:range xsd:string .
+

@@ -1,0 +1,80 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/digiscan360/Brand> a rdfs:Class ;
+    owl:equivalentClass <http://example.org/digiscan360/Seller> .
+
+<http://example.org/digiscan360/Product> a rdfs:Class .
+
+<http://example.org/digiscan360/Seller> a rdfs:Class .
+
+<http://example.org/digiscan360/belongsTo> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range <http://example.org/digiscan360/Seller> .
+
+<http://example.org/digiscan360/brand_name> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/date_accessed> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:dateTime .
+
+<http://example.org/digiscan360/img_url> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:anyURI .
+
+<http://example.org/digiscan360/num_reviews> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/price> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:float .
+
+<http://example.org/digiscan360/product_description> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/product_features> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/product_id> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/product_url> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:anyURI .
+
+<http://example.org/digiscan360/rating> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:float .
+
+<http://example.org/digiscan360/rating_1> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/rating_2> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/rating_3> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/rating_4> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/rating_5> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/title> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Product> ;
+    rdfs:range xsd:string .
+
