@@ -142,7 +142,6 @@ g.add((ds.belongsTo, RDF.type, RDF.Property))
 g.add((ds.belongsTo, RDFS.domain, ds.Product))
 g.add((ds.belongsTo, RDFS.range, ds.Seller))
 
-# Use OWL to define equivalentClass
 g.add((ds.Brand, OWL.equivalentClass, ds.Seller))
 
 g.add((ds.reviews, RDF.type, RDF.Property))
