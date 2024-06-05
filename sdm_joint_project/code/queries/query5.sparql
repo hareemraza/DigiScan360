@@ -1,0 +1,14 @@
+-- Products with the Highest Ratings
+
+PREFIX global: <http://example.org/digiscan360/schema#>
+
+SELECT ?product_id ?title (AVG(?rating) AS ?average_rating)
+WHERE {
+  ?product a global:Product ;
+           global:product_id ?product_id ;
+           global:title ?title ;
+           global:rating ?rating .
+}
+GROUP BY ?product_id ?title
+ORDER BY DESC(?average_rating)
+LIMIT 100

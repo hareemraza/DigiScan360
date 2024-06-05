@@ -1,0 +1,12 @@
+-- Average Product Price by Brand
+
+PREFIX global: <http://example.org/digiscan360/schema#>
+
+SELECT ?brand_name (AVG(?price) AS ?average_price)
+WHERE {
+  ?product a global:Product ;
+           global:brand_name ?brand_name ;
+           global:price ?price .
+}
+GROUP BY ?brand_name
+ORDER BY DESC(?average_price)

@@ -1,0 +1,16 @@
+-- Sentiment Analysis of Reviews for a Specific Brand (JBL)
+PREFIX global: <http://example.org/digiscan360/schema#>
+
+SELECT ?product_id ?title (SUM(IF(?sentiment, 1, -1)) AS ?sentiment_score)
+WHERE {
+  ?review a global:Review ;
+          global:product_id ?product_id ;
+          global:sentiment ?sentiment .
+  ?product a global:Product ;
+           global:product_id ?product_id ;
+           global:title ?title ;
+           global:brand_name "jbl" .
+}
+GROUP BY ?product_id ?title
+ORDER BY DESC(?sentiment_score)
+LIMIT 10

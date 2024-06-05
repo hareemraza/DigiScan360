@@ -1,0 +1,12 @@
+-- Most Mentioned Brands on Social Media
+
+PREFIX global: <http://example.org/digiscan360/schema#>
+
+SELECT ?brand_name (COUNT(?tweet) AS ?mention_count)
+WHERE {
+  ?tweet a global:Tweet ;
+         global:brand_name ?brand_name .
+}
+GROUP BY ?brand_name
+ORDER BY DESC(?mention_count)
+LIMIT 10

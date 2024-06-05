@@ -1,0 +1,15 @@
+-- Engagement Rate for Tweets by Brand
+
+PREFIX global: <http://example.org/digiscan360/schema#>
+
+SELECT ?brand_name (SUM(?like_count + ?reply_count + ?repost_count + ?quote_count) AS ?engagement_rate)
+WHERE {
+  ?tweet a global:Tweet ;
+         global:brand_name ?brand_name ;
+         global:like_count ?like_count ;
+         global:reply_count ?reply_count ;
+         global:repost_count ?repost_count ;
+         global:quote_count ?quote_count .
+}
+GROUP BY ?brand_name
+ORDER BY DESC(?engagement_rate)
