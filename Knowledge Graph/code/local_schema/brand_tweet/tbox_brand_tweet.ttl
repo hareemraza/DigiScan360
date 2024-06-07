@@ -2,45 +2,45 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/digiscan360/User> a rdfs:Class .
+<http://example.org/digiscan360/Brand> a rdfs:Class .
 
 <http://example.org/digiscan360/created_at> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:dateTime .
 
 <http://example.org/digiscan360/followers_count> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:integer .
 
 <http://example.org/digiscan360/friends_count> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:integer .
 
+<http://example.org/digiscan360/mentionsBrand> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
+    rdfs:range <http://example.org/digiscan360/Tweet> .
+
 <http://example.org/digiscan360/name> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:string .
 
 <http://example.org/digiscan360/record_date> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:dateTime .
 
-<http://example.org/digiscan360/tweets> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
-    rdfs:range <http://example.org/digiscan360/Tweet> .
-
 <http://example.org/digiscan360/url> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:anyURI .
 
 <http://example.org/digiscan360/user_id> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:string .
 
 <http://example.org/digiscan360/username> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:string .
 
 <http://example.org/digiscan360/verified> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:boolean .
 

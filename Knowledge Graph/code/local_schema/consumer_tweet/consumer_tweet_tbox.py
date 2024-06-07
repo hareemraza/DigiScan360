@@ -1,5 +1,4 @@
-from rdflib import Graph, Namespace, URIRef, Literal
-from rdflib.namespace import RDF, RDFS, XSD
+from rdflib import Graph, Namespace, RDF, RDFS, XSD
 
 # Define namespaces
 xsd = Namespace("http://www.w3.org/2001/XMLSchema#")
@@ -10,22 +9,15 @@ ds = Namespace("http://example.org/digiscan360/")
 # Create an empty graph
 g = Graph()
 
+
 # Add classes to the graph
 g.add((ds.Tweet, RDF.type, RDFS.Class))
-g.add((ds.Brand, RDF.type, RDFS.Class))
+g.add((ds.Consumer, RDF.type, RDFS.Class))
 
 # Add properties for Tweet class
 g.add((ds.tweet_id, RDF.type, RDF.Property))
 g.add((ds.tweet_id, RDFS.domain, ds.Tweet))
 g.add((ds.tweet_id, RDFS.range, XSD.string))
-
-g.add((ds.author_id, RDF.type, RDF.Property))
-g.add((ds.author_id, RDFS.domain, ds.Tweet))
-g.add((ds.author_id, RDFS.range, XSD.string))
-
-g.add((ds.screen_name, RDF.type, RDF.Property))
-g.add((ds.screen_name, RDFS.domain, ds.Tweet))
-g.add((ds.screen_name, RDFS.range, XSD.string))
 
 g.add((ds.timestamp, RDF.type, RDF.Property))
 g.add((ds.timestamp, RDFS.domain, ds.Tweet))
@@ -59,18 +51,6 @@ g.add((ds.hashtags, RDF.type, RDF.Property))
 g.add((ds.hashtags, RDFS.domain, ds.Tweet))
 g.add((ds.hashtags, RDFS.range, XSD.string))
 
-g.add((ds.user_followers_count, RDF.type, RDF.Property))
-g.add((ds.user_followers_count, RDFS.domain, ds.Tweet))
-g.add((ds.user_followers_count, RDFS.range, XSD.integer))
-
-g.add((ds.user_following_count, RDF.type, RDF.Property))
-g.add((ds.user_following_count, RDFS.domain, ds.Tweet))
-g.add((ds.user_following_count, RDFS.range, XSD.integer))
-
-g.add((ds.verified, RDF.type, RDF.Property))
-g.add((ds.verified, RDFS.domain, ds.Tweet))
-g.add((ds.verified, RDFS.range, XSD.boolean))
-
 g.add((ds.text, RDF.type, RDF.Property))
 g.add((ds.text, RDFS.domain, ds.Tweet))
 g.add((ds.text, RDFS.range, XSD.string))
@@ -79,10 +59,31 @@ g.add((ds.is_reply, RDF.type, RDF.Property))
 g.add((ds.is_reply, RDFS.domain, ds.Tweet))
 g.add((ds.is_reply, RDFS.range, XSD.boolean))
 
+# Add properties for Consumer class
+g.add((ds.author_id, RDF.type, RDF.Property))
+g.add((ds.author_id, RDFS.domain, ds.Consumer))
+g.add((ds.author_id, RDFS.range, XSD.string))
+
+g.add((ds.screen_name, RDF.type, RDF.Property))
+g.add((ds.screen_name, RDFS.domain, ds.Consumer))
+g.add((ds.screen_name, RDFS.range, XSD.string))
+
+g.add((ds.user_followers_count, RDF.type, RDF.Property))
+g.add((ds.user_followers_count, RDFS.domain, ds.Consumer))
+g.add((ds.user_followers_count, RDFS.range, XSD.integer))
+
+g.add((ds.user_following_count, RDF.type, RDF.Property))
+g.add((ds.user_following_count, RDFS.domain, ds.Consumer))
+g.add((ds.user_following_count, RDFS.range, XSD.integer))
+
+g.add((ds.verified_consumer, RDF.type, RDF.Property))
+g.add((ds.verified_consumer, RDFS.domain, ds.Consumer))
+g.add((ds.verified_consumer, RDFS.range, XSD.boolean))
+
 # Add relationships
-g.add((ds.mentionsBrand, RDF.type, RDF.Property))
-g.add((ds.mentionsBrand, RDFS.domain, ds.Tweet))
-g.add((ds.mentionsBrand, RDFS.range, ds.Brand))
+g.add((ds.tweets, RDF.type, RDF.Property))
+g.add((ds.tweets, RDFS.domain, ds.Consumer))
+g.add((ds.tweets, RDFS.range, ds.Tweet))
 
 # Serialize the graph to a file
 g.serialize(destination='tbox_consumer_tweet.ttl', format='turtle')

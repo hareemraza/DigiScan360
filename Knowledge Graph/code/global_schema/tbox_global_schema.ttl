@@ -6,6 +6,8 @@
 <http://example.org/digiscan360/Brand> a rdfs:Class ;
     owl:equivalentClass <http://example.org/digiscan360/Seller> .
 
+<http://example.org/digiscan360/Consumer> a rdfs:Class .
+
 <http://example.org/digiscan360/Product> a rdfs:Class .
 
 <http://example.org/digiscan360/Review> a rdfs:Class .
@@ -14,30 +16,36 @@
 
 <http://example.org/digiscan360/Tweet> a rdfs:Class .
 
-<http://example.org/digiscan360/User> a rdfs:Class .
+<http://example.org/digiscan360/author_id> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Consumer> ;
+    rdfs:range xsd:string .
 
 <http://example.org/digiscan360/belongsTo> a rdf:Property ;
     rdfs:domain <http://example.org/digiscan360/Product> ;
     rdfs:range <http://example.org/digiscan360/Seller> .
 
-<http://example.org/digiscan360/brand_id> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/Brand> ;
-    rdfs:range xsd:string .
-
-<http://example.org/digiscan360/brand_name> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/Brand> ;
-    rdfs:range xsd:string .
-
 <http://example.org/digiscan360/created_at> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:dateTime .
 
 <http://example.org/digiscan360/followers_count> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:integer .
 
 <http://example.org/digiscan360/friends_count> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/hashtags> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Tweet> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/impression_count> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Tweet> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/like_count> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Tweet> ;
     rdfs:range xsd:integer .
 
 <http://example.org/digiscan360/mentionsBrand> a rdf:Property ;
@@ -45,7 +53,7 @@
     rdfs:range <http://example.org/digiscan360/Brand> .
 
 <http://example.org/digiscan360/name> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:string .
 
 <http://example.org/digiscan360/product_description> a rdf:Property ;
@@ -68,9 +76,17 @@
     rdfs:domain <http://example.org/digiscan360/Product> ;
     rdfs:range xsd:anyURI .
 
+<http://example.org/digiscan360/quote_count> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Tweet> ;
+    rdfs:range xsd:integer .
+
 <http://example.org/digiscan360/record_date> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:dateTime .
+
+<http://example.org/digiscan360/repost_count> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Tweet> ;
+    rdfs:range xsd:integer .
 
 <http://example.org/digiscan360/review_body> a rdf:Property ;
     rdfs:domain <http://example.org/digiscan360/Review> ;
@@ -96,12 +112,20 @@
     rdfs:domain <http://example.org/digiscan360/Review> ;
     rdfs:range <http://example.org/digiscan360/Product> .
 
+<http://example.org/digiscan360/screen_name> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Consumer> ;
+    rdfs:range xsd:string .
+
 <http://example.org/digiscan360/seller_id> a rdf:Property ;
     rdfs:domain <http://example.org/digiscan360/Seller> ;
     rdfs:range xsd:string .
 
 <http://example.org/digiscan360/seller_name> a rdf:Property ;
     rdfs:domain <http://example.org/digiscan360/Seller> ;
+    rdfs:range xsd:string .
+
+<http://example.org/digiscan360/text> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Tweet> ;
     rdfs:range xsd:string .
 
 <http://example.org/digiscan360/tweet_date> a rdf:Property ;
@@ -112,27 +136,35 @@
     rdfs:domain <http://example.org/digiscan360/Tweet> ;
     rdfs:range xsd:string .
 
-<http://example.org/digiscan360/tweet_text> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/Tweet> ;
-    rdfs:range xsd:string .
-
 <http://example.org/digiscan360/tweets> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Consumer> ;
     rdfs:range <http://example.org/digiscan360/Tweet> .
 
 <http://example.org/digiscan360/url> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:anyURI .
 
+<http://example.org/digiscan360/user_followers_count> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Consumer> ;
+    rdfs:range xsd:integer .
+
+<http://example.org/digiscan360/user_following_count> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Consumer> ;
+    rdfs:range xsd:integer .
+
 <http://example.org/digiscan360/user_id> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:string .
 
 <http://example.org/digiscan360/username> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
     rdfs:range xsd:string .
 
 <http://example.org/digiscan360/verified> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/User> ;
+    rdfs:domain <http://example.org/digiscan360/Brand> ;
+    rdfs:range xsd:boolean .
+
+<http://example.org/digiscan360/verified_consumer> a rdf:Property ;
+    rdfs:domain <http://example.org/digiscan360/Consumer> ;
     rdfs:range xsd:boolean .
 

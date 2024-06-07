@@ -1,7 +1,7 @@
 @prefix ns1: <http://example.org/digiscan360/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/digiscan360/user/1491954488514241722> a ns1:User ;
+<http://example.org/digiscan360/brand/1491954488514241722> a ns1:Brand ;
     ns1:created_at "2014-06-30"^^xsd:dateTime ;
     ns1:followers_count 961270,
         962823,
@@ -532,7 +532,7 @@
     ns1:username "sonyaudio"^^xsd:string ;
     ns1:verified true .
 
-<http://example.org/digiscan360/user/3151808333632979719> a ns1:User ;
+<http://example.org/digiscan360/brand/3151808333632979719> a ns1:Brand ;
     ns1:created_at "2019-06-19"^^xsd:dateTime ;
     ns1:followers_count 428303,
         428674,
@@ -1063,7 +1063,7 @@
     ns1:username "appleaudio"^^xsd:string ;
     ns1:verified true .
 
-<http://example.org/digiscan360/user/3287742300390049885> a ns1:User ;
+<http://example.org/digiscan360/brand/3287742300390049885> a ns1:Brand ;
     ns1:created_at "2013-05-30"^^xsd:dateTime ;
     ns1:followers_count 784877,
         786888,
@@ -1594,7 +1594,7 @@
     ns1:username "jblaudio"^^xsd:string ;
     ns1:verified true .
 
-<http://example.org/digiscan360/user/4058488053064214143> a ns1:User ;
+<http://example.org/digiscan360/brand/4058488053064214143> a ns1:Brand ;
     ns1:created_at "2014-05-02"^^xsd:dateTime ;
     ns1:followers_count 966623,
         969942,

@@ -3,7 +3,7 @@ from rdflib import Graph, URIRef, Literal, Namespace, RDF, XSD
 from urllib.parse import quote
 
 # Load the data
-products_path = '/Users/kamrul.konok/Desktop/sdm_joint_project/data/products.csv'
+products_path = '/Users/kamrul.konok/Desktop/DigiScan360/sdm_joint_project/data/products.csv'
 products = pd.read_csv(products_path, delimiter='|')
 
 # Define namespaces

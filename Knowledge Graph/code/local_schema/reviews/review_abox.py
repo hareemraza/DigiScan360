@@ -3,7 +3,7 @@ from rdflib import Graph, URIRef, Literal, Namespace, RDF, XSD
 from urllib.parse import quote
 
 # Load the data
-reviews_path = '/Users/kamrul.konok/Desktop/sdm_joint_project/data/reviews.csv'
+reviews_path = '/Users/kamrul.konok/Desktop/DigiScan360/sdm_joint_project/data/reviews.csv'
 reviews = pd.read_csv(reviews_path, delimiter='|')
 
 # Define namespaces
