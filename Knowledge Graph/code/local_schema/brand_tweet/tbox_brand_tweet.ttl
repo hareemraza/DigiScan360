@@ -17,8 +17,8 @@
     rdfs:range xsd:integer .
 
 <http://example.org/digiscan360/mentionsBrand> a rdf:Property ;
-    rdfs:domain <http://example.org/digiscan360/Brand> ;
-    rdfs:range <http://example.org/digiscan360/Tweet> .
+    rdfs:domain <http://example.org/digiscan360/Tweet> ;
+    rdfs:range <http://example.org/digiscan360/Brand> .
 
 <http://example.org/digiscan360/name> a rdf:Property ;
     rdfs:domain <http://example.org/digiscan360/Brand> ;

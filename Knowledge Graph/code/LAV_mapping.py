@@ -61,51 +61,54 @@ def create_metadata(entity, action, graph_uri):
 # Define SPARQL CONSTRUCT queries for each entity
 construct_queries = {
     'ConsumerTweet': """
-    PREFIX global: <http://example.org/digiscan360/schema#>
-    PREFIX local: <http://example.org/digiscan360/>
+        PREFIX global: <http://example.org/digiscan360/schema#>
+        PREFIX local: <http://example.org/digiscan360/>
 
-    CONSTRUCT {
-      ?tweet a global:Tweet ;
-             global:tweet_id ?tweet_id ;
-             global:timestamp ?timestamp ;
-             global:brand_name ?brand_name ;
-             global:impression_count ?impression_count ;
-             global:like_count ?like_count ;
-             global:reply_count ?reply_count ;
-             global:repost_count ?repost_count ;
-             global:quote_count ?quote_count ;
-             global:hashtags ?hashtags ;
-             global:text ?text ;
-             global:is_reply ?is_reply .
+        CONSTRUCT {
+        ?tweet a global:Tweet ;
+                global:tweet_id ?tweet_id ;
+                global:timestamp ?timestamp ;
+                global:brand_name ?brand_name ;
+                global:impression_count ?impression_count ;
+                global:like_count ?like_count ;
+                global:reply_count ?reply_count ;
+                global:repost_count ?repost_count ;
+                global:quote_count ?quote_count ;
+                global:hashtags ?hashtags ;
+                global:text ?text ;
+                global:is_reply ?is_reply .
 
-      ?consumer a global:Consumer ;
-                global:author_id ?author_id ;
-                global:screen_name ?screen_name ;
-                global:user_followers_count ?user_followers_count ;
-                global:user_following_count ?user_following_count ;
-                global:verified_consumer ?verified_consumer .
-    }
-    WHERE {
-        ?tweet a local:Tweet ;
-               local:tweet_id ?tweet_id ;
-               local:timestamp ?timestamp ;
-               local:brand_name ?brand_name ;
-               local:impression_count ?impression_count ;
-               local:like_count ?like_count ;
-               local:reply_count ?reply_count ;
-               local:repost_count ?repost_count ;
-               local:quote_count ?quote_count ;
-               local:hashtags ?hashtags ;
-               local:text ?text ;
-               local:is_reply ?is_reply .
+        ?consumer a global:Consumer ;
+                    global:author_id ?author_id ;
+                    global:screen_name ?screen_name ;
+                    global:user_followers_count ?user_followers_count ;
+                    global:user_following_count ?user_following_count ;
+                    global:verified_consumer ?verified_consumer ;
+                    global:tweets ?tweet .
+        }
+        WHERE {
+            ?tweet a local:Tweet ;
+                local:tweet_id ?tweet_id ;
+                local:timestamp ?timestamp ;
+                local:brand_name ?brand_name ;
+                local:impression_count ?impression_count ;
+                local:like_count ?like_count ;
+                local:reply_count ?reply_count ;
+                local:repost_count ?repost_count ;
+                local:quote_count ?quote_count ;
+                local:hashtags ?hashtags ;
+                local:text ?text ;
+                local:is_reply ?is_reply .
 
-        ?consumer a local:Consumer ;
-                  local:author_id ?author_id ;
-                  local:screen_name ?screen_name ;
-                  local:user_followers_count ?user_followers_count ;
-                  local:user_following_count ?user_following_count ;
-                  local:verified_consumer ?verified_consumer .
-    }
+            ?consumer a local:Consumer ;
+                    local:author_id ?author_id ;
+                    local:screen_name ?screen_name ;
+                    local:user_followers_count ?user_followers_count ;
+                    local:user_following_count ?user_following_count ;
+                    local:verified_consumer ?verified_consumer ;
+                    local:tweets ?tweet .
+        }
+
     """,
     'Product': """
     PREFIX global: <http://example.org/digiscan360/schema#>
@@ -181,34 +184,36 @@ construct_queries = {
            local:reviews ?reviews .
     }
     """,
-    'UserTweet': """
-    PREFIX global: <http://example.org/digiscan360/schema#>
-    PREFIX local: <http://example.org/digiscan360/>
+    'BrandTweet': """
+        PREFIX global: <http://example.org/digiscan360/schema#>
+        PREFIX local: <http://example.org/digiscan360/>
 
-    CONSTRUCT {
-      ?s a global:Brand ;
-         global:user_id ?user_id ;
-         global:name ?name ;
-         global:username ?username ;
-         global:created_at ?created_at ;
-         global:url ?url ;
-         global:followers_count ?followers_count ;
-         global:record_date ?record_date ;
-         global:friends_count ?friends_count ;
-         global:verified ?verified .
-    }
-    WHERE {
-        ?s a local:Brand ;
-           local:user_id ?user_id ;
-           local:name ?name ;
-           local:username ?username ;
-           local:created_at ?created_at ;
-           local:url ?url ;
-           local:followers_count ?followers_count ;
-           local:record_date ?record_date ;
-           local:friends_count ?friends_count ;
-           local:verified ?verified .
-    }
+        CONSTRUCT {
+        ?s a global:Brand ;
+            global:user_id ?user_id ;
+            global:name ?name ;
+            global:username ?username ;
+            global:created_at ?created_at ;
+            global:url ?url ;
+            global:followers_count ?followers_count ;
+            global:record_date ?record_date ;
+            global:friends_count ?friends_count ;
+            global:verified ?verified ;
+            global:mentionsBrand ?mentionsBrand .
+        }
+        WHERE {
+            ?s a local:Brand ;
+            local:user_id ?user_id ;
+            local:name ?name ;
+            local:username ?username ;
+            local:created_at ?created_at ;
+            local:url ?url ;
+            local:followers_count ?followers_count ;
+            local:record_date ?record_date ;
+            local:friends_count ?friends_count ;
+            local:verified ?verified ;
+            local:mentionsBrand ?mentionsBrand .
+        }
     """
 }
 
@@ -217,7 +222,7 @@ local_repositories = {
     'ConsumerTweet': LOCAL_CONSUMER_TWEET_REPO_URL,
     'Product': LOCAL_PRODUCT_DATA_REPO_URL,
     'Review': LOCAL_REVIEWS_DATA_REPO_URL,
-    'UserTweet': LOCAL_USER_TWEET_REPO_URL
+    'BrandTweet': LOCAL_USER_TWEET_REPO_URL
 }
 
 # Execute each CONSTRUCT query and collect the results

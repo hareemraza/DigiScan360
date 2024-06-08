@@ -13,7 +13,7 @@ g = Graph()
 # Add classes to the graph
 g.add((ds.Brand, RDF.type, RDFS.Class))
 
-# Add properties for User class
+# Add properties for Brand class
 g.add((ds.user_id, RDF.type, RDF.Property))
 g.add((ds.user_id, RDFS.domain, ds.Brand))
 g.add((ds.user_id, RDFS.range, XSD.string))
@@ -52,8 +52,8 @@ g.add((ds.verified, RDFS.range, XSD.boolean))
 
 # Add relationships
 g.add((ds.mentionsBrand, RDF.type, RDF.Property))
-g.add((ds.mentionsBrand, RDFS.domain, ds.Brand))
-g.add((ds.mentionsBrand, RDFS.range, ds.Tweet))
+g.add((ds.mentionsBrand, RDFS.domain, ds.Tweet))
+g.add((ds.mentionsBrand, RDFS.range, ds.Brand))
 
 # Serialize the graph to a file
 g.serialize(destination='tbox_brand_tweet.ttl', format='turtle')
