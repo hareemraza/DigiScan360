@@ -1,7 +1,7 @@
 @prefix ns1: <http://example.org/digiscan360/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<http://example.org/digiscan360/brand/1491954488514241722> a ns1:Brand ;
+<http://example.org/digiscan360/user/1491954488514241722> a ns1:Brand ;
     ns1:created_at "2014-06-30"^^xsd:dateTime ;
     ns1:followers_count 961270,
         962823,
@@ -265,6 +265,7 @@
         1642016,
         1642979 ;
     ns1:friends_count 47 ;
+    ns1:mentionsBrand <http://example.org/digiscan360/brand/sony> ;
     ns1:name "sony"^^xsd:string ;
     ns1:record_date "2020-01-05"^^xsd:dateTime,
         "2020-01-12"^^xsd:dateTime,
@@ -532,7 +533,7 @@
     ns1:username "sonyaudio"^^xsd:string ;
     ns1:verified true .
 
-<http://example.org/digiscan360/brand/3151808333632979719> a ns1:Brand ;
+<http://example.org/digiscan360/user/3151808333632979719> a ns1:Brand ;
     ns1:created_at "2019-06-19"^^xsd:dateTime ;
     ns1:followers_count 428303,
         428674,
@@ -796,6 +797,7 @@
         1104204,
         1106990 ;
     ns1:friends_count 51 ;
+    ns1:mentionsBrand <http://example.org/digiscan360/brand/apple> ;
     ns1:name "apple"^^xsd:string ;
     ns1:record_date "2020-01-05"^^xsd:dateTime,
         "2020-01-12"^^xsd:dateTime,
@@ -1063,7 +1065,7 @@
     ns1:username "appleaudio"^^xsd:string ;
     ns1:verified true .
 
-<http://example.org/digiscan360/brand/3287742300390049885> a ns1:Brand ;
+<http://example.org/digiscan360/user/3287742300390049885> a ns1:Brand ;
     ns1:created_at "2013-05-30"^^xsd:dateTime ;
     ns1:followers_count 784877,
         786888,
@@ -1327,6 +1329,7 @@
         1434137,
         1435811 ;
     ns1:friends_count 63 ;
+    ns1:mentionsBrand <http://example.org/digiscan360/brand/jbl> ;
     ns1:name "jbl"^^xsd:string ;
     ns1:record_date "2020-01-05"^^xsd:dateTime,
         "2020-01-12"^^xsd:dateTime,
@@ -1594,7 +1597,7 @@
     ns1:username "jblaudio"^^xsd:string ;
     ns1:verified true .
 
-<http://example.org/digiscan360/brand/4058488053064214143> a ns1:Brand ;
+<http://example.org/digiscan360/user/4058488053064214143> a ns1:Brand ;
     ns1:created_at "2014-05-02"^^xsd:dateTime ;
     ns1:followers_count 966623,
         969942,
@@ -1814,6 +1817,7 @@
         1534582,
         1538813 ;
     ns1:friends_count 41 ;
+    ns1:mentionsBrand <http://example.org/digiscan360/brand/bose> ;
     ns1:name "bose"^^xsd:string ;
     ns1:record_date "2020-01-05"^^xsd:dateTime,
         "2020-01-12"^^xsd:dateTime,
@@ -2036,4 +2040,16 @@
     ns1:user_id "4058488053064214143"^^xsd:string ;
     ns1:username "boseaudio"^^xsd:string ;
     ns1:verified true .
+
+<http://example.org/digiscan360/brand/apple> a ns1:Brand ;
+    ns1:name "apple"^^xsd:string .
+
+<http://example.org/digiscan360/brand/bose> a ns1:Brand ;
+    ns1:name "bose"^^xsd:string .
+
+<http://example.org/digiscan360/brand/jbl> a ns1:Brand ;
+    ns1:name "jbl"^^xsd:string .
+
+<http://example.org/digiscan360/brand/sony> a ns1:Brand ;
+    ns1:name "sony"^^xsd:string .
 

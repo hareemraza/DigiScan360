@@ -43,5 +43,5 @@ if __name__ == "__main__":
     kg = users_and_brands()
 
     turtle = kg.serialize(format='turtle')
-    kg.serialize(destination='abox_user_tweet.ttl', format='turtle')
+    kg.serialize(destination='abox_brand_tweet.ttl', format='turtle')
     print(turtle)
