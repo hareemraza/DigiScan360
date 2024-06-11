@@ -26,6 +26,8 @@ Before you begin, ensure you have the following installed:
 
    [Download Data](https://drive.google.com/drive/folders/12zFUpn2E62k5qSyFZkOMOdy0eFtPneGR?usp=sharing) 
 
+   You have to use UPC email address to access this data. Otherwise, you need to be granted access.
+
 2. **Copy Data:**
    After downloading, copy the dataset file to the `import` directory of your Neo4j project. The `import` directory is typically located at:
    
