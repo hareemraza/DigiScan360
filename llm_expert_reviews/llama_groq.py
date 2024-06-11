@@ -22,7 +22,7 @@ if 'brand_name' not in df.columns:
     df['brand_name'] = None
 
 # GROQ API key here
-os.environ["GROQ_API_KEY"] = "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"
+os.environ["GROQ_API_KEY"] = "" # Add your GROQ API key here
 
 LLAMA3_8B_INSTRUCT = "llama3-8b-8192"
 DEFAULT_MODEL = LLAMA3_8B_INSTRUCT
