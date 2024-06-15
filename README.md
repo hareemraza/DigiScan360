@@ -107,7 +107,7 @@ Navigate to the `text-generation` directory and run the desired script to genera
 
 ## Architecture
 
-Most of the architecture of this project is hosted on Microsoft Fabric. Specifically, the notebooks were all run there, and then data pipelines with copy activities were used to copy data from Azure Blob Storage to the Lakehouse and then to the Data Warehouse,
+Most of the architecture of this project is hosted on Microsoft Fabric. Specifically, the notebooks were all run there, and then data pipelines with copy activities were used to copy data from Azure Blob Storage to the Lakehouse and then to the Data Warehouse.
 
 ## Credits and Acknowledgements
 
