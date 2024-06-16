@@ -2,7 +2,7 @@
 
 ## Overview
 
-DigiScan360 is a visual tool for competitive intelligence based on various data sources such as e-commerce and social media. It enables comprehensive analysis and insights through a combination of data collection, processing, and visualization.
+DigiScan360 is a visual tool for competitive intelligence based on various data sources such as e-commerce, expert reviews and social media. It enables comprehensive analysis and insights through a combination of data collection, processing, and visualization.
 
 ![System Architecture](images/system-architecture.png)
 
@@ -14,7 +14,13 @@ The `Property Graph` directory contains scripts to create a property graph for p
 
 - **queries**: Cypher queries for graph algorithms and analytics.
 - **scripts**: Python and Cypher scripts for loading and processing graph data.
+### Knowledge Graph 
 
+The `Knowledge Graph` directory contains scripts to create local schemas and global schema for Social Media and Ecommerce data.
+- **LAV_mapping.py**: This script is designed to map and transfer RDF data from local repositories to a global repository using SPARQL CONSTRUCT queries and wrappers. It includes metadata tracking for source verification and audit trails. 
+- **global_schema**: Contains a python to create the global schema tbox and its respective turtle file.
+- **local_schema**: Contains python scripts to create seperate tbox and abox for each of the data sources and their respective tbox and abox turtle files.
+- **queries**: SPARQL queries are presesented to perform graph analytics on global schema based on our KPIs.
 ### data-warehouse
 
 The `data-warehouse` directory includes SQL scripts and other resources for setting up and managing a data warehouse in SQL Server. The data is formatted into a star schema with various views for easy access and analysis.
@@ -45,8 +51,10 @@ Additionally, we create Spark notebooks connected to the Lakehouse. These notebo
 - **Create ecommerce warehouse tables.ipynb**: Notebook for creating e-commerce warehouse tables.
 - **Ecommerce Cleaning.ipynb**: Notebook for cleaning e-commerce data.
 - **Ecommerce Data Merging.ipynb**: Notebook for merging e-commerce data.
+- **social_media_and_expert_review_data_formatting.ipynb**: Notebook for cleaning Social Media and Expert Reveiws data.
 - **Ecommerce Sentiment Analysis.ipynb**: Notebook for analyzing sentiment in e-commerce data.
 - **Product_Similarity_Search.ipynb**: Notebook for performing product similarity searches using Pinecone.
+
 
 ![E-commerce Data Formatter](images/ecommerce-data-formatter.png)
 
@@ -60,6 +68,7 @@ The `text-generation` directory contains scripts to use the LLAMA-3 model for te
 - **get_topics.py**: Python script for extracting topics.
 - **get_topics_by_brand.py**: Python script for extracting topics by brand.
 - **llama.py**: Python script related to the LLAMA model.
+- **expert_review_strengths_and_weakness.py**: Python script to extract strengths and weaknesses of a product, its brand name, and product_type.
 
 **E-commerce Data Formatter**: The second subprocess demonstrates the use of the Groq API for text generation with LLAMA-3. This free API leverages their GPU-equipped servers to run the LLM and provide output. To optimize latency, we use the Groq API whenever it is not rate-limiting our server. Otherwise, we deploy LLAMA-3 within a local PySpark notebook, which increases throughput at the cost of latency. Despite the model's 8 billion parameters, memory is not a concern, as PySpark notebooks offer 64 GB of RAM.
 
@@ -100,6 +109,9 @@ Navigate to the `data-warehouse` directory and run the SQL scripts.
 #### Property Graph
 
 Navigate to the `Property Graph` directory and use the provided scripts and queries to manage and analyze property graphs.
+
+#### Knowledge Graph 
+Navigate to the `Knowledge Graph` directory and use the provided scripts to create local and global schema, and use the SPARQL queries on global schema.
 
 #### Text Generation
 
