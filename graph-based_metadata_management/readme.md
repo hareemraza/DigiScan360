@@ -24,7 +24,6 @@ This folder contains the following:
 
 ## Folder Structure
 
-```plaintext
 Knowledge Graph/
 ├── global_schema/
 │   ├── global_tbox.py
@@ -37,6 +36,7 @@ Knowledge Graph/
 ├── queries/
 ├── LAV_mapping.py
 └── README.md
+
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
