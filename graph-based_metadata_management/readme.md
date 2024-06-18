@@ -2,8 +2,7 @@
 
 ## Overview
 
-Welcome to the Knowledge Graph Metadata Management project! This repository contains the implementation of a graph-based metadata management system utilizing GraphDB and knowledge graphs. The project aims to provide an efficient and scalable solution for managing metadata in various domains.
-
+Welcome to the Knowledge Graph Metadata Management project! This repository contains the implementation of a graph-based metadata management system utilizing GraphDB and knowledge graphs.
 
 
 ## Prerequisites
