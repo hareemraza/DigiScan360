@@ -20,8 +20,7 @@ if 'product_type' not in df.columns:
     df['product_type'] = None
 if 'brand_name' not in df.columns:
     df['brand_name'] = None
-
-# GROQ API key here
+    
 os.environ["GROQ_API_KEY"] = "" # Add your GROQ API key here
 
 LLAMA3_8B_INSTRUCT = "llama3-8b-8192"
@@ -154,8 +153,6 @@ for ind, row in tqdm(df.iterrows(), total=df.shape[0]):
         with open('error_log.txt', 'a') as f:
             f.write(f"Error processing row {ind}: {e}\nResponse: {raw_summary}\nProductTypeResponse: {raw_product_type}\nBrandNameResponse: {raw_brand_name}\n\n")
 
-# Save the enhanced dataframe to a new CSV file
 df.to_csv('expert_review_cnet.csv', sep=',', index=False)
 
-# Display the enhanced reviews with product types and brand names
 display(df)
